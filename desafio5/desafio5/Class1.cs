@@ -14,11 +14,10 @@ alunos.Add(scobyAluno);
 alunos.Add(chubsAluno);
 
 
-StreamWriter sw = new StreamWriter("D:\\desafi C#\\desafio5\\alunosalunosNota.csv");
-sw.WriteLine("nome" + ";" + "idade" + ";" + "nota");
 foreach (var aluninho in alunos)
 {
+    StreamWriter sw = new StreamWriter("D:\\desafi C#\\desafio5\\"+ aluninho.nome + ".csv");
     sw.WriteLine(aluninho.nome + ";" + aluninho.idade + ";" + aluninho.nota);
+    sw.Close();
 }
-sw.WriteLine("soma das notas: "+ ";" + alunos.Select(x => x.nota).Sum());
-sw.Close();
+//sw.WriteLine("soma das notas: " + ";" + alunos.Select(x => x.nota).Sum());
